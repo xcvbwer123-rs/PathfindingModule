@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://github.com/xcvbwer123-rs/PathfindingModule/</loc>
+         <lastmod>2022-09-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/xcvbwer123-rs/PathfindingModule/GetStarted/basic_usage/</loc>
+         <lastmod>2022-09-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/xcvbwer123-rs/PathfindingModule/GetStarted/example_following_ai/</loc>
+         <lastmod>2022-09-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/xcvbwer123-rs/PathfindingModule/GetStarted/installation/</loc>
+         <lastmod>2022-09-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+</urlset>
