@@ -263,7 +263,7 @@ function Pathfinding.new(Character: Model, Team)
 		AgentCanMoveWithTrussParts = false
 	}, {__index = Metatable, __metatable = "Current metatable is locked", __newindex = function(Table, Index, Value) if getfenv(2).script ~= script then return Table[Index] else rawset(Table, Index, Value) end end})
 	
-	Path.SetNetworkOwner(Character, game:GetService("Players"):GetPlayerFromCharacter(Character))
+	Newtable:SetNetworkOwner(game:GetService("Players"):GetPlayerFromCharacter(Character))
 	
 	return Newtable
 end
