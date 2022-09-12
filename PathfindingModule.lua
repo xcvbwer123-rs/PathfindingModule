@@ -241,8 +241,8 @@ function Path:StopFollowing()
 	self.Following = false
 end
 
-function Path.SetNetworkOwner(Character, Owner)
-	for _, Part in ipairs(Character:GetChildren()) do
+function Path:SetNetworkOwner(Owner)
+	for _, Part in ipairs(self.Model:GetChildren()) do
 		if Part:IsA("BasePart") and Part:CanSetNetworkOwnership() then
 			Part:SetNetworkOwner(Owner)
 		end
