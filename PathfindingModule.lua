@@ -1,6 +1,6 @@
 local Pathfinding = {}
 
-local Path = {}
+local Path = {__version="1.0.5"}
 
 local PathfindingService = game:GetService("PathfindingService")
 
