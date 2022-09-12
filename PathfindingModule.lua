@@ -84,7 +84,7 @@ function Path:FindTarget(Distance: number, Parent: Instance): TargetFindResult |
 		local RootPart = FinalTarget:FindFirstChild("HumanoidRootPart")
 		local Team = FinalTarget:FindFirstChild("Team")
 		if not Team then
-			Team = {Value = "None"}
+			Team = {Value = FinalTarget.Name}
 		end
 		return table.freeze({
 			Model = FinalTarget,
