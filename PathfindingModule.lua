@@ -24,15 +24,17 @@ function Path:Raycast(Start, End, Params, Unit): RaycastResult | nil
 end
 
 function Path:FindTrusses(Distance: number, Parent: Instance)
+	if _G.TrussesForPath then
+		return _G.TrussesForPath
+	end
 	Parent = Parent or workspace
 	if not self.TrussConnect then
 		self.TrussConnect = Parent.DescendantAdded:Connect(function(Instance)
 			if Instance:IsA("TrussPart") and self.Trusses then
-				table.insert(self.Trusses, Instance)
+				table.insert(_G.TrussesForPath, Instance)
 			end
 		end)
 	end
-	if #Parent:GetDescendants() >= 15000 and self.Trusses ~= nil then return self.Trusses end
 	local Trusses = {}
 	Distance = Distance or math.huge
 	for number, Child in ipairs(Parent:GetDescendants()) do
@@ -43,8 +45,8 @@ function Path:FindTrusses(Distance: number, Parent: Instance)
 			task.wait()
 		end
 	end
-	self.Trusses = table.freeze(Trusses)
-	return self.Trusses
+	_G.TrussesForPath = table.freeze(Trusses)
+	return _G.TrussesForPath
 end
 
 function Path:GetTopnBottom(Truss: TrussPart)
