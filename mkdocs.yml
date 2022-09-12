@@ -28,6 +28,7 @@ nav:
     - Basic Usage: GetStarted/basic_usage.md
     - "Basic Example: Following NPC": GetStarted/example_following_ai.md
 
+  - API: api.md
 markdown_extensions:
   - admonition
   - codehilite
