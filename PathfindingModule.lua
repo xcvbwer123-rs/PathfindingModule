@@ -172,7 +172,8 @@ function Path:MoveTo(TargetFindRange: number, Parent: Instance, Target: TargetFi
 	else
 		if self.AgentCanMoveWithTrussParts then
 			local Trusses = self:FindTrusses()
-			for _, Truss: TrussPart in ipairs(Trusses) do
+			for Index, Truss: TrussPart in ipairs(Trusses) do
+				if Truss.Parent == nil then Trusses[Index] = nil continue end
 				local Top, Bottom = self:GetTopnBottom(Truss)
 				MovePath:ComputeAsync(MyRoot.Position, Bottom)
 				if MovePath.Status == Enum.PathStatus.Success then
@@ -223,7 +224,8 @@ function Path:MoveToByPosition(TargetPosition: Vector3)
 	else
 		if self.AgentCanMoveWithTrussParts then
 			local Trusses = self:FindTrusses()
-			for _, Truss: TrussPart in ipairs(Trusses) do
+			for Index, Truss: TrussPart in ipairs(Trusses) do
+				if Truss.Parent == nil then Trusses[Index] = nil continue end
 				local Top, Bottom = self:GetTopnBottom(Truss)
 				MovePath:ComputeAsync(MyRoot.Position, Bottom)
 				if MovePath.Status == Enum.PathStatus.Success then
